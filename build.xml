@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Moop Media Manager" basedir=".">
+<project name="Moop Media Manager" basedir="." default="compile">
 
 	<property file="build.properties" />
 	
