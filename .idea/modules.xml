@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MoopMediaManager.iml" filepath="$PROJECT_DIR$/MoopMediaManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../XBMCTools/XBMCTools.iml" filepath="$PROJECT_DIR$/../XBMCTools/XBMCTools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Eclipse/Workspaces/Luna/MoopMediaManager/com.abopu.util/com.abopu.util.iml" filepath="$PROJECT_DIR$/../../../Eclipse/Workspaces/Luna/MoopMediaManager/com.abopu.util/com.abopu.util.iml" />
+    </modules>
+  </component>
+</project>
+
