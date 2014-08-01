@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project name="Moop Media Manager" basedir=".">
+
+	<property file="build.properties" />
+	
+	<presetdef name="javac">
+		<javac includeantruntime="false" />
+	</presetdef>
+	
+	<path id="classpath">
+	  <fileset id="libs" dir="${util.lib.dir}">
+	    <include name="**/*.jar"/>
+	  </fileset>
+	</path>
+	
+	<!-- 
+	  Here are references to other project folders that are referenced to in this build file.
+	-->
+	<property name="util.basedir" value="../com.abopu.util/" />
+	<property file="${util.basedir}/build.properties" />
+	
+	<property name="xbmctools.basedir" value="../XBMCTools/" />
+	<property file="${xbmctools.basedir}/build.properties" />
+
+	<target name="build-deps" description="Build and package into a jar all other projects that this project depends upon.">
+		<mkdir dir="${mmm.lib.dir}" />
+		<property file="${util.basedir}/ant.properties" />
+		<ant antfile="${util.basedir}/build.xml" target="jar" inheritAll="false" useNativeBasedir="true" />
+		<copy file="${util.jar.path}" todir="${mmm.lib.dir}" />
+		<ant antfile="${xbmctools.basedir}/build.xml" target="jar" inheritAll="false" useNativeBasedir="true" />
+		<copy file="${xbmctools.jar.path}" todir="${mmm.lib.dir}" />
+	</target>
+
+	<target name="clean">
+		<delete dir="${mmm.build.dir}" />
+	</target>
+	
+	<target name="compile" depends="build-deps">
+		<javac srcdir="${mmm.src.dir}" destdir="${mmm.build.dir}/classes" />
+	</target>
+</project>
